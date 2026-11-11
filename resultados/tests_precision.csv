@@ -1,15 +1,15 @@
 objetivo,muestra,test,estadistico,p_valor
-mensual,sin 2020,DM Factor vs AR_t2,-1.0572,0.2926
-mensual,sin 2020,DM Factor vs Cero,-0.7053,0.482
-mensual,sin 2020,DM Factor vs CFI,-1.2879,0.2004
-mensual,sin 2020,CW AR_t2 vs Factor,2.609,0.0045
-mensual,sin 2020,CW Cero vs Factor,2.6454,0.0041
-mensual,desde 2023,DM Factor vs AR_t2,-0.9877,0.3288
-mensual,desde 2023,DM Factor vs Cero,-0.405,0.6875
-mensual,desde 2023,DM Factor vs CFI,-2.2954,0.0267
-mensual,desde 2023,CW AR_t2 vs Factor,1.8356,0.0332
-mensual,desde 2023,CW Cero vs Factor,1.4185,0.078
-3 meses,sin 2020,CW Solo_conocido vs Factor_3m,2.5241,0.0058
-3 meses,sin 2020,CW Cero vs Factor_3m,4.9225,0.0
-3 meses,desde 2023,CW Solo_conocido vs Factor_3m,1.6095,0.0538
-3 meses,desde 2023,CW Cero vs Factor_3m,3.0344,0.0012
+mensual,sin 2020,DM Factor vs AR_t2,-1.309,0.1931
+mensual,sin 2020,DM Factor vs Cero,-0.8387,0.4034
+mensual,sin 2020,DM Factor vs CFI,-0.9256,0.3566
+mensual,sin 2020,CW AR_t2 vs Factor,2.4051,0.0081
+mensual,sin 2020,CW Cero vs Factor,2.4239,0.0077
+mensual,desde 2023,DM Factor vs AR_t2,-0.8865,0.3803
+mensual,desde 2023,DM Factor vs Cero,-0.3423,0.7338
+mensual,desde 2023,DM Factor vs CFI,-2.3053,0.026
+mensual,desde 2023,CW AR_t2 vs Factor,1.8084,0.0353
+mensual,desde 2023,CW Cero vs Factor,1.4394,0.075
+3 meses,sin 2020,CW Solo_conocido vs Factor_3m,2.5468,0.0054
+3 meses,sin 2020,CW Cero vs Factor_3m,4.8498,0.0
+3 meses,desde 2023,CW Solo_conocido vs Factor_3m,1.7412,0.0408
+3 meses,desde 2023,CW Cero vs Factor_3m,2.7479,0.003

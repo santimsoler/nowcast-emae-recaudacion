@@ -15,7 +15,7 @@ La recaudación agregada (Coparticipación Federal, CFI) es una señal ruidosa d
 | Seguridad Social (aportes + contribuciones) | Empleo y salarios registrados |
 | Derechos de Importación | Importaciones de bienes |
 
-Todas las series se deflactan por IPC y se desestacionalizan, con remoción de outliers aditivos.
+Todas las series se deflactan por IPC y se desestacionalizan, con remoción de outliers aditivos. Entre enero 2010 y marzo 2016 se usa el IPC de San Luis (`197.1_NIVEL_GENERAL_2014_0_13`), porque el IPC nacional de ese período estuvo intervenido; desde abril 2016, el IPC del INDEC. El empalme encadena variaciones mensuales.
 
 ## Especificaciones
 
@@ -37,22 +37,22 @@ En cada mes se estima solo con la información disponible en ese momento: los pe
 
 | Modelo | Sin 2020 | Desde 2023 |
 |---|---|---|
-| Factor de recaudación | **0,963** | **0,945** |
-| CFI agregada | 1,001 | 1,044 |
+| Factor de recaudación | **0,960** | **0,947** |
+| CFI agregada | 0,988 | 1,046 |
 | Crecimiento cero | 0,989 | 0,969 |
 
-- Clark-West, factor contra AR: p = 0,005 (sin 2020) y p = 0,033 (desde 2023).
-- Error absoluto medio: 0,87 pp. Acierta el signo en el 63 % de los meses.
+- Clark-West, factor contra AR: p = 0,008 (sin 2020) y p = 0,035 (desde 2023).
+- Error absoluto medio: 0,88 pp. Acierta el signo en el 66 % de los meses.
 
 **Promedio móvil de 3 meses (RMSE relativo al modelo que solo usa el mes ya publicado)**
 
 | Modelo | Sin 2020 | Desde 2023 |
 |---|---|---|
-| Factor de recaudación | **0,967** | **0,927** |
+| Factor de recaudación | **0,938** | **0,915** |
 | Crecimiento cero | 1,186 | 1,139 |
 
-- Correlación nowcast–dato: 0,61. Error absoluto medio: 0,40 pp.
-- Clark-West contra el modelo que solo usa el mes publicado: p = 0,006 (sin 2020) y p = 0,054 (desde 2023).
+- Correlación nowcast–dato: 0,63. Error absoluto medio: 0,37 pp.
+- Clark-West contra el modelo que solo usa el mes publicado: p = 0,005 (sin 2020) y p = 0,041 (desde 2023).
 
 **Lectura:** la recaudación de transacciones anticipa la dirección de la actividad y aporta información significativa frente a los benchmarks. Pero la variación mensual del EMAE desestacionalizado tiene mucho ruido (desestacionalización y revisiones). El nowcast mensual tiene bandas amplias, de ±1,1 pp al 68 %, y el de 3 meses es el indicador de ciclo más preciso, con ±0,5 pp.
 
@@ -61,7 +61,7 @@ En cada mes se estima solo con la información disponible en ese momento: los pe
 ```
 data/
   emae_sa.csv               EMAE desestacionalizado (índice) y fuente de cada dato
-  cfi_ipc.csv               CFI nominal e inflación mensual (INDEC)
+  cfi_ipc.csv               CFI nominal e inflación mensual (IPC San Luis hasta mar-2016, INDEC desde abr-2016)
   recaudacion.csv           Recaudación mensual por tributo, millones de $ (datos.gob.ar)
   recaudacion_manual.csv    Último mes cargado a mano desde el informe de ARCA
 python/nowcast_emae.py      Pipeline completo (desestacionalización tipo X11)
