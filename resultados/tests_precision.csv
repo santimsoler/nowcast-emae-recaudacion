@@ -1,0 +1,15 @@
+objetivo,muestra,test,estadistico,p_valor
+mensual,sin 2020,DM Factor vs AR_t2,-1.0572,0.2926
+mensual,sin 2020,DM Factor vs Cero,-0.7053,0.482
+mensual,sin 2020,DM Factor vs CFI,-1.2879,0.2004
+mensual,sin 2020,CW AR_t2 vs Factor,2.609,0.0045
+mensual,sin 2020,CW Cero vs Factor,2.6454,0.0041
+mensual,desde 2023,DM Factor vs AR_t2,-0.9877,0.3288
+mensual,desde 2023,DM Factor vs Cero,-0.405,0.6875
+mensual,desde 2023,DM Factor vs CFI,-2.2954,0.0267
+mensual,desde 2023,CW AR_t2 vs Factor,1.8356,0.0332
+mensual,desde 2023,CW Cero vs Factor,1.4185,0.078
+3 meses,sin 2020,CW Solo_conocido vs Factor_3m,2.5241,0.0058
+3 meses,sin 2020,CW Cero vs Factor_3m,4.9225,0.0
+3 meses,desde 2023,CW Solo_conocido vs Factor_3m,1.6095,0.0538
+3 meses,desde 2023,CW Cero vs Factor_3m,3.0344,0.0012

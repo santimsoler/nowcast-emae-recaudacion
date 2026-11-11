@@ -1,0 +1,4 @@
+,RMSE_pp,MAE_pp,RMSE_rel_Solo_conocido,correlacion,acierto_signo,sesgo_pp
+Factor_3m,0.51,0.397,0.967,0.6134,0.7018,-0.0625
+Solo_conocido,0.5274,0.4087,1.0,0.5568,0.7281,0.0434
+Cero,0.6258,0.4936,1.1864,,0.0,-0.0392

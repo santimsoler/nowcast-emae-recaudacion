@@ -1,0 +1,4 @@
+,estadistico,p_valor
+Jarque-Bera,1.8501,0.3965
+Breusch-Pagan,4.8077,0.6834
+Breusch-Godfrey (3),4.3937,0.222
