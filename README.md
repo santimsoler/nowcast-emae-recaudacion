@@ -37,24 +37,33 @@ En cada mes se estima solo con la información disponible en ese momento: los pe
 
 | Modelo | Sin 2020 | Desde 2023 |
 |---|---|---|
-| Factor de recaudación | **0,960** | **0,947** |
-| CFI agregada | 0,988 | 1,046 |
-| Crecimiento cero | 0,989 | 0,969 |
+| Factor de recaudación | **0,959** | **0,942** |
+| CFI agregada | 0,988 | 1,045 |
+| Crecimiento cero | 0,986 | 0,963 |
 
-- Clark-West, factor contra AR: p = 0,008 (sin 2020) y p = 0,035 (desde 2023).
+- Clark-West, factor contra AR: p = 0,007 (sin 2020) y p = 0,030 (desde 2023).
 - Error absoluto medio: 0,88 pp. Acierta el signo en el 66 % de los meses.
 
 **Promedio móvil de 3 meses (RMSE relativo al modelo que solo usa el mes ya publicado)**
 
 | Modelo | Sin 2020 | Desde 2023 |
 |---|---|---|
-| Factor de recaudación | **0,938** | **0,915** |
+| Factor de recaudación | **0,935** | **0,908** |
 | Crecimiento cero | 1,186 | 1,139 |
 
-- Correlación nowcast–dato: 0,63. Error absoluto medio: 0,37 pp.
-- Clark-West contra el modelo que solo usa el mes publicado: p = 0,005 (sin 2020) y p = 0,041 (desde 2023).
+- Correlación nowcast–dato: 0,64. Error absoluto medio: 0,37 pp.
+- Clark-West contra el modelo que solo usa el mes publicado: p = 0,005 (sin 2020) y p = 0,037 (desde 2023).
 
 **Lectura:** la recaudación de transacciones anticipa la dirección de la actividad y aporta información significativa frente a los benchmarks. Pero la variación mensual del EMAE desestacionalizado tiene mucho ruido (desestacionalización y revisiones). El nowcast mensual tiene bandas amplias, de ±1,1 pp al 68 %, y el de 3 meses es el indicador de ciclo más preciso, con ±0,5 pp.
+
+## Registro de nowcasts
+
+`resultados/registro_nowcast.csv` guarda cada nowcast con la fecha de la corrida y, cuando el INDEC publica, el dato observado y el error. Es la evaluación en tiempo real del modelo.
+
+| Corrida | Mes | Nowcast | Banda 68 % | Publicado | Error |
+|---|---|---|---|---|---|
+| 10/11/2026 | sep-2026 | −0,13 % | −1,24 a +0,98 | +1,1 % (24/11/2026) | +1,23 pp (dentro de la banda de 90 %) |
+| 27/11/2026 | oct-2026 | +0,07 % | −1,02 a +1,16 | pendiente | — |
 
 ## Estructura
 
@@ -66,7 +75,7 @@ data/
   recaudacion_manual.csv    Último mes cargado a mano desde el informe de ARCA
 python/nowcast_emae.py      Pipeline completo (desestacionalización tipo X11)
 R/nowcast_emae.R            Pipeline completo (X13-ARIMA-SEATS) + descarga de datos
-resultados/                 Backtests, métricas, tests, coeficientes y nowcast
+resultados/                 Backtests, métricas, tests, coeficientes, nowcast y registro de nowcasts publicados
 figuras/                    Gráficos
 ```
 
@@ -105,7 +114,7 @@ Las dos versiones usan los mismos datos y la misma especificación, y solo difie
 
 ## Limitaciones
 
-- **El EMAE de `data/emae_sa.csv` combina dos vintages:** la serie previa hasta julio de 2025 y las variaciones mensuales del informe del INDEC del 21/10/2026 desde agosto de 2025. Al actualizar desde el INDEC se reemplaza por una vintage única.
+- **El EMAE de `data/emae_sa.csv` combina tres vintages:** la serie previa hasta julio de 2025, las variaciones mensuales del informe del INDEC del 21/10/2026 para agosto y septiembre de 2025, y las del informe del 24/11/2026 desde octubre de 2025. Al actualizar desde el INDEC se reemplaza por una vintage única.
 - **La evaluación es pseudo tiempo real:** usa las últimas vintages, no los datos tal como se publicaron en cada momento.
 - **El último mes en `recaudacion_manual.csv` (octubre 2026) es parcial:** IVA DGI y Seguridad Social están estimados a partir de variaciones informadas en la prensa (ver la columna `fuente`).
 
